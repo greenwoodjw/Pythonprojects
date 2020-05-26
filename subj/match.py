@@ -4,6 +4,7 @@ import requests
 import sys, getopt  # args
 import smtp3
 
+
 # /input args
 
 #import sys, getopt
@@ -11,8 +12,8 @@ import smtp3
 
 def main(argv):
     verbose = 'false'
-    inputfile = '/Users/jgreenwood/input.txt'
-    outputfile = '/Users/jgreenwood/output4.txt'
+    inputfile = '/Users/jimgreenwood/PycharmProjects/subj/input.txt'
+    outputfile = '/Users/jimgreenwood/PycharmProjects/subj/output4.txt'
     try:
         opts, args = getopt.getopt(argv, "vhi:o:", ["ifile=", "ofile="])  #: has value, no colon no value
     except getopt.GetoptError:
@@ -95,6 +96,6 @@ def main(argv):
 
 if __name__ == "__main__":
     main(sys.argv[1:])
-    smtp3.sendList()
+    #smtp3.sendList()
 
 # //end args
