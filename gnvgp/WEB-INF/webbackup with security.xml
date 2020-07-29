@@ -1,0 +1,115 @@
+<?xml version="1.0" ?>
+
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee    
+http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+	<!-- General description of your Web application -->
+	<display-name>Online Survey</display-name>
+
+	<description>
+      Project: exercise 26.8
+	  Online Survey.
+	</description>
+	
+	<context-param>
+			<param-name>databaseDriver</param-name>
+			<param-value>com.mysql.jdbc.Driver</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>databaseName</param-name>
+		<param-value>jdbc:mysql://localhost/survey</param-value>
+	</context-param>
+
+	<context-param>		
+		<param-name>username</param-name>
+		<param-value>root</param-value>
+	</context-param>
+
+	<context-param>		
+		<param-name>password</param-name>
+		<param-value>password</param-value>
+	</context-param>
+	
+	<servlet>
+		<servlet-name>Survey</servlet-name>
+		<servlet-class>Survey</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+      <servlet-name>Survey</servlet-name>
+      <url-pattern>/Survey</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>StartSurvey</servlet-name>
+		<servlet-class>StartSurvey</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+      <servlet-name>StartSurvey</servlet-name>
+      <url-pattern>/StartSurvey</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Result</servlet-name>
+		<servlet-class>Result</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+      <servlet-name>Result</servlet-name>
+      <url-pattern>/Result</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+	<servlet-name>Proj2</servlet-name>
+	<servlet-class>Proj2</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+	      <servlet-name>Proj2</servlet-name>
+	      <url-pattern>/Proj2</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	
+	<security-role>
+	
+	<role-name>tomcat</role-name>
+	<role-name>role1</role-name>
+	<role-name>manager</role-name>
+  	<role-name>admin</role-name>
+  	
+  	</security-role>
+  	
+  	
+  	<security-constraint>
+  		<web-resource-collection>
+  		
+  		<web-resource-name>UpdateSurvey</web-resource-name>
+  		
+  		<url-pattern>/*</url-pattern>
+  		
+		<http-method>GET</http-method>
+		<http-method>POST</http-method>
+		
+		
+		</web-resource-collection>
+		
+		<auth-constraint>
+		  <role-name>admin</role-name>
+		  <role-name>tomcat</role-name>
+		  </auth-constraint>
+	</security-constraint>
+	
+	
+	<login-config>
+	<auth-method>BASIC</auth-method>
+	</login-config>
+
+</web-app>
