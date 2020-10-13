@@ -1,0 +1,7 @@
+sudo bluetoothctl -a
+scan on
+devices
+pair 00:04:3E:30:EC:58
+trust 00:04:3E:30:EC:58
+quit 
+sudo rfcomm bind /dev/rfcomm0 00:04:3E:30:EC:58

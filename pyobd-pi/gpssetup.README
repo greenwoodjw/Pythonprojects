@@ -1,0 +1,15 @@
+disable systemd
+sudo systemctl stop gpsd.socket
+sudo systemctl disable gpsd.socket
+
+
+
+
+httpsble gpsd.socket
+sudo systemctl start gpsd.socket
+
+
+http://learn.adafruit.com/adafruit-ultimate-gps-on-the-raspberry-pi/setting-everything-up
+
+sudo gpsd /dev/ttyUSB0 -F /var/run/gpsd.sock
+sudo gpsd /dev/rfcomm0 -F /var/run/gpsd.sock

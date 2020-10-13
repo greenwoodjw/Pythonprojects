@@ -1,0 +1,4 @@
+System Time,RPM,MPH,Throttle,Load,Fuel Status,Sat time,lat,long,alt,sat speed, X,Y,Z
+ G (calibrated) -4.83,-4.80,-5.43
+ G (calibrated) -4.83,-4.80,-5.43
+ G (calibrated) -4.83,-4.80,-5.43
